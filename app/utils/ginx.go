@@ -28,9 +28,9 @@ func (g *Ginx) ParseJSON(c *gin.Context, obj interface{}) error {
 // SuccessWarp 处理成功包装
 func (g *Ginx) SuccessWarp(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, gin.H{
-		"err_code": "0000",
-		"err_msg":  "处理成功",
-		"data":     data,
+		"code": "0000",
+		"msg":  "处理成功",
+		"data": data,
 	})
 
 	c.Abort()
@@ -47,9 +47,9 @@ func (g *Ginx) FailWarp(c *gin.Context, err error) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"err_code": defaultErr.code,
-		"err_msg":  defaultErr.msg,
-		"data":     nil,
+		"code": defaultErr.code,
+		"msg":  defaultErr.msg,
+		"data": nil,
 	})
 
 	c.Abort()
