@@ -1,7 +1,6 @@
 package daos
 
 import (
-	"fmt"
 	"github.com/IoTCompetition/IoBack/app/entity"
 	"github.com/google/wire"
 	"go.uber.org/zap"
@@ -40,7 +39,6 @@ func (o *OptionDao) UpdateOptions(params OptionUpdate) error {
 		Infrared: params.Infrared,
 		Card:     params.Card,
 	}
-	fmt.Println(tmp)
 	db = db.Where(map[string]interface{}{"id": 1})
 
 	err := db.Updates(tmp).Error
