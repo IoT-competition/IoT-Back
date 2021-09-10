@@ -2,6 +2,7 @@ package entity
 
 import "gorm.io/gorm"
 
+// Option 列值默认均为10  0会导致gorm忽略更新
 type Option struct {
 	gorm.Model
 	LED      int `gorm:"column:led;type=int;not null"`
